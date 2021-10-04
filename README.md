@@ -1,6 +1,8 @@
 # wc-accordion 🏖
-
 A a11y ready web component for your basic accordion needs. Small, simple, nothing more.
+
+This mostly inspired from [this post](link-post) by Louis Hoebregts (@Mamboleoo)
+
 
 ## Demo
 
@@ -57,6 +59,7 @@ Just wrap your standard [\<details\>](https://developer.mozilla.org/en-US/docs/W
 
 
 [link-demo]: https://funkeeflow.github.io/wc-accordion/
+[link-post]: https://css-tricks.com/how-to-animate-the-details-element-using-waapi/
 
 ## Lincense
 
