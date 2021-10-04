@@ -1,12 +1,12 @@
 # wc-accordion 🏖
 A a11y ready web component for your basic accordion needs. Small, simple, nothing more.
 
-This mostly inspired from [this post](link-post) by Louis Hoebregts (@Mamboleoo)
+This mostly inspired from [this post][link-post] by Louis Hoebregts (@Mamboleoo)
 
 
 ## Demo
 
-See the demo [here](link-demo) ☀️
+See the demo [here][link-demo] ☀️
 
 ## Usage
 
