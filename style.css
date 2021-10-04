@@ -1,0 +1,57 @@
+html {
+  font-family: IBM Plex Sans;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  padding: 2em;
+}
+
+.faqs {
+  margin-top: 20px;
+  display: grid;
+  row-gap: 20px;
+}
+
+details summary {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+  padding: 20px;
+  border: 1px solid lightgreen;
+  border-radius: 10px;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary:after {
+  content: '▾';
+  transition: 0.2s transform ease-in-out;
+}
+
+details[open] summary:after {
+  transform: rotate(-180deg);
+}
+
+details[open] summary,
+details summary:hover {
+  background-color: lightgreen;
+}
+
+.wrapper {
+  padding: 20px 5px;
+}
+
+.wrapper p {
+  margin: 0;
+}
