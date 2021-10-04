@@ -1,0 +1,59 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "wc-accordion",
+      "path": "./wc-accordion.js",
+      "attributes": [
+        {
+          "name": "mode"
+        }
+      ],
+      "properties": [
+        {
+          "name": "template",
+          "type": "string",
+          "default": "\"<slot></slot>\""
+        },
+        {
+          "name": "openAll",
+          "type": "() => void",
+          "default": "\"() => {\\n    this.elements.forEach((el) => {\\n      el.open();\\n    });\\n  }\""
+        },
+        {
+          "name": "closeAll",
+          "type": "() => void",
+          "default": "\"() => {\\n    this.elements.forEach((el) => {\\n      el.shrink();\\n    });\\n  }\""
+        },
+        {
+          "name": "open",
+          "type": "(index: any) => void",
+          "default": "\"(index) => {\\n    try {\\n      this.elements[index].open();\\n    } catch (error) {\\n      console.log(error);\\n    }\\n  }\""
+        },
+        {
+          "name": "close",
+          "type": "(index: any) => void",
+          "default": "\"(index) => {\\n    try {\\n      this.elements[index].shrink();\\n    } catch (error) {\\n      console.log(error);\\n    }\\n  }\""
+        },
+        {
+          "name": "handleOnChange",
+          "type": "(event: any) => void",
+          "default": "\"(event) => {\\n    if (event.target.checked) {\\n      this.openAll();\\n    } else {\\n      this.closeAll();\\n    }\\n  }\""
+        },
+        {
+          "name": "handleExclusiveOpen",
+          "type": "(event: any) => void",
+          "default": "\"(event) => {\\n    this.elements.forEach((detail) => {\\n      if (detail.el !== event.target) {\\n        detail.shrink();\\n      }\\n    });\\n  }\""
+        },
+        {
+          "name": "defaultSlot"
+        },
+        {
+          "name": "elements",
+          "type": "never[]",
+          "default": "[]"
+        }
+      ]
+    }
+  ]
+}

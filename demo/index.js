@@ -1,6 +1,5 @@
-import './style.css';
-import './wc-accordion.js';
-import './wc-toggle.js';
+import '../wc-accordion.js';
+import '../wc-toggle.js';
 
 const accordion = document.querySelector('wc-accordion');
 

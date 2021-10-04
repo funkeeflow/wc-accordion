@@ -1,6 +1,14 @@
 {
-  "name": "js",
-  "version": "0.0.0",
-  "private": true,
-  "dependencies": {}
+  "name": "wc-accordion",
+  "type": "module",
+  "main": "wc-accordion.js",
+  "module": "wc-accordion.js",
+  "version": "0.1.0",
+  "dependencies": {},
+  "scripts": {
+    "analyze": "wca analyze wc-accordion.js --outFile custom-elements.json"
+  },
+  "devDependencies": {
+    "web-component-analyzer": "^1.1.6"
+  }
 }

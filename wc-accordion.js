@@ -1,4 +1,11 @@
 class AnimatedDetail {
+  /**
+   * All credits go to Louis Hoebregts (@Mamboleoo)
+   * Code taken from his article on css-tricks.com
+   * https://css-tricks.com/how-to-animate-the-details-element-using-waapi/
+   *
+   * This slightly modified and renamed.
+   */
   constructor(el, animationDuration = 200, animationEase = 'linear') {
     this.el = el;
     this.summary = el.querySelector('summary');
@@ -52,9 +59,8 @@ class AnimatedDetail {
   expand() {
     this.isExpanding = true;
     const startHeight = `${this.el.offsetHeight}px`;
-    const endHeight = `${
-      this.summary.offsetHeight + this.content.offsetHeight
-    }px`;
+    const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight
+      }px`;
 
     if (this.animation) this.animation.cancel();
 
@@ -79,8 +85,7 @@ class AnimatedDetail {
     this.el.style.height = this.el.style.overflow = '';
   }
 }
-
-class Accordion extends HTMLElement {
+export class Accordion extends HTMLElement {
   template = `<slot></slot>`;
 
   static get observedAttributes() {
@@ -168,7 +173,7 @@ class Accordion extends HTMLElement {
     });
   }
 
-  disconnectedCallback() {}
+  disconnectedCallback() { }
 }
 
 customElements.define('wc-accordion', Accordion);
