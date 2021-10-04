@@ -4,6 +4,8 @@
   "main": "wc-accordion.js",
   "module": "wc-accordion.js",
   "version": "0.1.1",
+  "repository": "https://github.com/funkeeflow/wc-accordion",
+  "homepage": "https://funkeeflow.github.io/wc-accordion/",
   "scripts": {
     "analyze": "wca analyze wc-accordion.js --outFile custom-elements.json"
   },
