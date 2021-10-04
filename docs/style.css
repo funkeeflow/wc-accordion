@@ -1,9 +1,12 @@
+
 html {
-  font-family: IBM Plex Sans;
+  font-family: sans-serif;
+  line-height: 150%;
 }
 
 body {
   margin: 0;
+  padding: 2em;
 }
 
 * {
@@ -14,8 +17,8 @@ body {
   opacity: 0;
 }
 
-main {
-  padding: 2em;
+a{
+  color: lightgreen;
 }
 
 .faqs {
@@ -39,7 +42,7 @@ details summary::-webkit-details-marker {
 }
 
 details summary:after {
-  content: '▾';
+  content: '▿';
   transition: 0.2s transform ease-in-out;
 }
 
@@ -58,4 +61,11 @@ details summary:hover {
 
 .wrapper p {
   margin: 0;
+}
+
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
 }

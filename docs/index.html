@@ -6,10 +6,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="index.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module">
+    import 'https://unpkg.com/wc-accordion';
+
+    // const accordion = document.querySelector('wc-accordion');
+
+    // document.getElementById('toggle-all').addEventListener('change', (event) => {
+    //   if (event.detail.checked) {
+    //     accordion.openAll();
+    //   } else {
+    //     accordion.closeAll();
+    //   }
+    // });
+
+    // document.getElementById('toggle-1').addEventListener('change', (event) => {
+    //   if (event.detail.checked) {
+    //     accordion.open(0);
+    //   } else {
+    //     accordion.close(0);
+    //   }
+    // });
+
+    // document.getElementById('mode').addEventListener('change', (event) => {
+    //   if (event.detail.checked) {
+    //     accordion.setAttribute('mode', 'exclusive');
+    //   } else {
+    //     accordion.removeAttribute('mode');
+    //   }
+    // });
+
+  </script>
 </head>
+
 <body>
+  <header>
+    <h1><a href="https://github.com/funkeeflow/wc-accordion" target="_blank">wc-accordion</a></h1>
+    <span>Author: Florian Berg</span>
+    <span>License: MIT</span>
+  </header>
   <main>
     <wc-toggle id="toggle-all">
       <span slot="off">Close All</span>
@@ -28,7 +63,7 @@
 
     <wc-accordion class="faqs" mode="normal">
       <details>
-        <summary>Some details</summary>
+        <summary>🥳 This is ...</summary>
         <div class="wrapper">
           <p>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -44,7 +79,7 @@
         </div>
       </details>
       <details>
-        <summary>Some details</summary>
+        <summary>🎉 a super simple ...</summary>
         <div class="wrapper">
           <p>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -60,7 +95,7 @@
         </div>
       </details>
       <details>
-        <summary>Some details</summary>
+        <summary>🏝 Accordion as a web component!</summary>
         <div class="wrapper">
           <p>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -78,4 +113,5 @@
     </wc-accordion>
   </main>
 </body>
+
 </html>
