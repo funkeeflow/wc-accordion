@@ -142,7 +142,7 @@ export class Accordion extends HTMLElement {
 
   handleExclusiveOpen = (event) => {
     this.elements.forEach((detail) => {
-      if (detail.el !== event.target) {
+      if (detail.el !== event.target.parentNode) {
         detail.shrink();
       }
     });
