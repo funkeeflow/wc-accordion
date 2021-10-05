@@ -16,6 +16,8 @@ class AnimatedDetail {
     this.summary.addEventListener('click', (e) => this.onClick(e));
     this.easing = animationEase;
     this.duration = animationDuration;
+    this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
   }
 
   onClick(e) {
@@ -32,24 +34,29 @@ class AnimatedDetail {
     this.isClosing = true;
     const startHeight = `${this.el.offsetHeight}px`;
     const endHeight = `${this.summary.offsetHeight}px`;
-    const duration =
-    getComputedStyle(this.el).getPropertyValue('--animation-duration') || getComputedStyle(this.el).getPropertyValue('--animation-duration-end');
+
+    const duration = getComputedStyle(this.el).getPropertyValue('--animation-duration') || getComputedStyle(this.el).getPropertyValue('--animation-duration-end');
     const easing = getComputedStyle(this.el).getPropertyValue('--animation-easing') || getComputedStyle(this.el).getPropertyValue('--animation-easing-end');
-    console.log(easing)
+
     if (this.animation) this.animation.cancel();
 
-    this.animation = this.el.animate(
-      {
-        height: [startHeight, endHeight],
-      },
-      {
-        duration: parseInt(duration) || this.duration,
-        easing: easing || this.easing,
-      }
-    );
+    if (this.prefersReducedMotion.matches === false) {
 
-    this.animation.onfinish = () => this.onAnimationFinish(false);
-    this.animation.oncancel = () => (this.isClosing = false);
+      this.animation = this.el.animate(
+        {
+          height: [startHeight, endHeight],
+        },
+        {
+          duration: parseInt(duration) || this.duration,
+          easing: easing || this.easing,
+        }
+      );
+
+      this.animation.onfinish = () => this.onAnimationFinish(false);
+      this.animation.oncancel = () => (this.isClosing = false);
+    } else {
+      this.onAnimationFinish(false);
+    }
   }
 
   open() {
@@ -66,19 +73,27 @@ class AnimatedDetail {
       }px`;
 
     if (this.animation) this.animation.cancel();
+
     const duration = getComputedStyle(this.el).getPropertyValue('--animation-duration') || getComputedStyle(this.el).getPropertyValue('--animation-duration-start');
+
     const easing = getComputedStyle(this.el).getPropertyValue('--animation-easing') || getComputedStyle(this.el).getPropertyValue('--animation-easing-start');
-    this.animation = this.el.animate(
-      {
-        height: [startHeight, endHeight],
-      },
-      {
-        duration: parseInt(duration) || this.duration,
-        easing: easing || this.easing,
-      }
-    );
-    this.animation.onfinish = () => this.onAnimationFinish(true);
-    this.animation.oncancel = () => (this.isExpanding = false);
+
+    if (this.prefersReducedMotion.matches === false) {
+      this.animation = this.el.animate(
+        {
+          height: [startHeight, endHeight],
+        },
+        {
+          duration: parseInt(duration) || this.duration,
+          easing: easing || this.easing,
+        }
+      );
+
+      this.animation.onfinish = () => this.onAnimationFinish(true);
+      this.animation.oncancel = () => (this.isExpanding = false);
+    } else {
+      this.onAnimationFinish(true)
+    }
   }
 
   onAnimationFinish(open) {
