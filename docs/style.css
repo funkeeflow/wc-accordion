@@ -8,10 +8,11 @@ body {
   margin: 0;
   padding: 2em;
   --highlight-color: RoyalBlue;
+  max-width: 600px;
 }
 
-main{
-  max-width: 600px;
+header + main {
+  margin-top: 20px;
 }
 
 * {
@@ -31,13 +32,17 @@ a{
   color: var(--highlight-color);
 }
 
-.faqs {
+svg#github{
+  width: 20px;
+}
+
+.accordion {
   margin-top: 20px;
   display: grid;
   row-gap: 20px;
 }
 
-wc-accordion[mode="normal"] details{
+.accordion[mode="normal"] details{
   --animation-easing: ease-in-out;
   --animation-duration-start: 300;
   --animation-duration-end: 100;
