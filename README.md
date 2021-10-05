@@ -1,16 +1,31 @@
 # wc-accordion 🏖
-A a11y ready web component for your basic accordion needs. Small, simple, nothing more.
+A vanilla, a11y ready web component for your basic accordion needs. Small, simple, nothing more.
 
-This mostly inspired from [this post][link-post] by Louis Hoebregts (@Mamboleoo)
-
+This is mostly inspired by [this post][link-post] from Louis Hoebregts (@Mamboleoo).
 
 ## Demo
 
-See the demo [here][link-demo] ☀️
+Check out the [demo page][link-demo]. ☀️
 
 ## Usage
 
-Just wrap your standard [\<details\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements. Style your summary as you need. Take a wrapper class for your content and thats it!
+```bash
+npm install wc-accordion
+```
+in your app entry point (e.g. `app.js`)
+```js
+import 'wc-accordion.js'
+```
+or import directly from **unpkg.com**
+```html
+
+<script type="module" src="https://unpkg.com/wc-accordion"></script>
+```
+
+```bash
+npm install wc-accordion
+```
+Then just wrap your standard [\<details\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements. Style the `<summary>` tag as you need. Take a wrapper class for your content and thats it!
 
 ```html
   <wc-accordion class="accordion">
@@ -42,6 +57,22 @@ Just wrap your standard [\<details\>](https://developer.mozilla.org/en-US/docs/W
 
 ```
 
+## How to use a custom component name
+
+To use a custom name for the element, import default class and define the element your self like so:
+
+```js
+import { Accordion } from 'wc-accordion.js'
+
+customElement.define('my-accordion', Accordion);
+```
+
+```html
+<my-accordion>
+...
+</my-accordion>
+```
+
 ## Properties
 
 | Property              | Type                   | Description                                      |
@@ -59,8 +90,9 @@ Just wrap your standard [\<details\>](https://developer.mozilla.org/en-US/docs/W
 
 
 [link-demo]: https://funkeeflow.github.io/wc-accordion/
+[link-license]: https://github.com/funkeeflow/wc-accordion/blob/master/LICENSE
 [link-post]: https://css-tricks.com/how-to-animate-the-details-element-using-waapi/
 
 ## Lincense
 
-MIT
+[MIT][link-license]
