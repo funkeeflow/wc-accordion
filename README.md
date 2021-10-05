@@ -21,10 +21,6 @@ or import directly from **unpkg.com**
 
 <script type="module" src="https://unpkg.com/wc-accordion"></script>
 ```
-
-```bash
-npm install wc-accordion
-```
 Then just wrap your standard [\<details\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements. Style the `<summary>` tag as you need. Take a wrapper class for your content and thats it!
 
 ```html
