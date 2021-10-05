@@ -84,6 +84,32 @@ customElement.define('my-accordion', Accordion);
 | **mode**                | `exclusive`, `normal`  | Exclusive will limit to only one open item at a time
 
 
+## CSS Custom Properties
+
+Use this custom properties on the your details elements to set animation timings and easing.
+
+| Property              | Value                  |
+|-----------------------|------------------------------|
+| **--animation-duration**  | Duration of the animation    |
+| **--animation-duration-start**  | Duration of the open animation    |
+| **--animation-duration-end**  | Duration of the closing animation    |
+| **--animation-easing**    | Animation ease (e.g. `ease-in`)      |
+
+## Development
+Install dev dependencies
+
+```bash
+yarn install
+```
+Link local package
+```bash
+yarn run link
+yarn link wc-accordion
+```
+Run dev server
+```bash
+yarn run dev
+```
 
 [link-demo]: https://funkeeflow.github.io/wc-accordion/
 [link-license]: https://github.com/funkeeflow/wc-accordion/blob/master/LICENSE

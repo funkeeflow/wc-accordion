@@ -32,7 +32,10 @@ class AnimatedDetail {
     this.isClosing = true;
     const startHeight = `${this.el.offsetHeight}px`;
     const endHeight = `${this.summary.offsetHeight}px`;
-
+    const duration =
+    getComputedStyle(this.el).getPropertyValue('--animation-duration') || getComputedStyle(this.el).getPropertyValue('--animation-duration-end');
+    const easing = getComputedStyle(this.el).getPropertyValue('--animation-easing') || getComputedStyle(this.el).getPropertyValue('--animation-easing-end');
+    console.log(easing)
     if (this.animation) this.animation.cancel();
 
     this.animation = this.el.animate(
@@ -40,8 +43,8 @@ class AnimatedDetail {
         height: [startHeight, endHeight],
       },
       {
-        duration: this.duration,
-        easing: this.easing,
+        duration: parseInt(duration) || this.duration,
+        easing: easing || this.easing,
       }
     );
 
@@ -63,14 +66,15 @@ class AnimatedDetail {
       }px`;
 
     if (this.animation) this.animation.cancel();
-
+    const duration = getComputedStyle(this.el).getPropertyValue('--animation-duration') || getComputedStyle(this.el).getPropertyValue('--animation-duration-start');
+    const easing = getComputedStyle(this.el).getPropertyValue('--animation-easing') || getComputedStyle(this.el).getPropertyValue('--animation-easing-start');
     this.animation = this.el.animate(
       {
         height: [startHeight, endHeight],
       },
       {
-        duration: this.duration,
-        easing: this.easing,
+        duration: parseInt(duration) || this.duration,
+        easing: easing || this.easing,
       }
     );
     this.animation.onfinish = () => this.onAnimationFinish(true);
