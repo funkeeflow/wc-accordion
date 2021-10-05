@@ -13,10 +13,15 @@ class AnimatedDetail {
     this.animation = null;
     this.isClosing = false;
     this.isExpanding = false;
-    this.summary.addEventListener('click', (e) => this.onClick(e));
     this.easing = animationEase;
     this.duration = animationDuration;
     this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    try{
+      this.summary.addEventListener('click', (e) => this.onClick(e));
+    }catch(error){
+      console.log(error)
+    }
 
   }
 
@@ -139,7 +144,7 @@ export class Accordion extends HTMLElement {
     try {
       this.elements[index].open();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -147,7 +152,7 @@ export class Accordion extends HTMLElement {
     try {
       this.elements[index].shrink();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -171,24 +176,34 @@ export class Accordion extends HTMLElement {
     const modeExclusive = this.getAttribute('mode') === 'exclusive';
     if (modeExclusive) {
       this.defaultSlot.assignedElements().forEach((el) => {
-        el.querySelector('summary').addEventListener(
-          'click',
-          this.handleExclusiveOpen
-        );
+        try{
+          el.querySelector('summary').addEventListener(
+            'click',
+            this.handleExclusiveOpen
+          );
+        }catch(error){
+          console.log(error);
+        }
       });
     } else {
       this.defaultSlot.assignedElements().forEach((el) => {
-        el.querySelector('summary').removeEventListener(
-          'click',
-          this.handleExclusiveOpen
-        );
+        try {
+          el.querySelector('summary').removeEventListener(
+            'click',
+            this.handleExclusiveOpen
+          );
+        } catch (error) {
+          console.log(error)
+        }
       });
     }
   }
 
   connectedCallback() {
     this.defaultSlot.assignedElements().forEach((el) => {
-      this.elements.push(new AnimatedDetail(el));
+      if(el.tagName === 'DETAILS'){
+        this.elements.push(new AnimatedDetail(el));
+      }
     });
   }
 
