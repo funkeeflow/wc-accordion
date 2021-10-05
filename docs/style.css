@@ -7,10 +7,20 @@ html {
 body {
   margin: 0;
   padding: 2em;
+  --highlight-color: RoyalBlue;
+}
+
+main{
+  max-width: 600px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::selection{
+  color: white;
+  background-color: var(--highlight-color);
 }
 
 *:not(:defined){
@@ -18,7 +28,7 @@ body {
 }
 
 a{
-  color: lightgreen;
+  color: var(--highlight-color);
 }
 
 .faqs {
@@ -33,7 +43,7 @@ details summary {
   list-style: none;
   cursor: pointer;
   padding: 20px;
-  border: 1px solid lightgreen;
+  border: 2px solid var(--highlight-color);
   border-radius: 10px;
 }
 
@@ -52,7 +62,8 @@ details[open] summary:after {
 
 details[open] summary,
 details summary:hover {
-  background-color: lightgreen;
+  color: white;
+  background-color: var(--highlight-color);
 }
 
 .wrapper {
@@ -68,4 +79,12 @@ pre code {
   border: 1px solid #999;
   display: block;
   padding: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body{
+    color: white;
+    background-color: #000020;
+    --highlight-color: DodgerBlue;
+  }
 }

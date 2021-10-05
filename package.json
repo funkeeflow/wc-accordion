@@ -7,9 +7,11 @@
   "repository": "https://github.com/funkeeflow/wc-accordion",
   "homepage": "https://funkeeflow.github.io/wc-accordion/",
   "scripts": {
+    "dev": "wds --node-resolve --app-index docs/index.html --watch --open",
     "analyze": "wca analyze index.js --outFile custom-elements.json"
   },
   "devDependencies": {
+    "@web/dev-server": "^0.1.24",
     "web-component-analyzer": "^1.1.6"
   },
   "dependencies": {}

@@ -42,8 +42,6 @@
 <body>
   <header>
     <h1><a href="https://github.com/funkeeflow/wc-accordion" target="_blank">wc-accordion</a></h1>
-    <span>Author: Florian Berg</span>
-    <span>License: MIT</span>
   </header>
   <main>
     <wc-toggle id="toggle-all">
@@ -61,6 +59,7 @@
       <span slot="on">Mode exclusive</span>
     </wc-toggle>
 
+    <h2>Normal Mode</h2>
     <wc-accordion class="faqs" mode="normal">
       <details>
         <summary>🥳 This is ...</summary>
@@ -111,6 +110,63 @@
         </div>
       </details>
     </wc-accordion>
+
+    <br>
+    <br>
+    <br>
+
+    <h2>Exclusive Mode</h2>
+    <wc-accordion class="faqs" mode="exclusive">
+      <details>
+        <summary>😎 Wow ...</summary>
+        <div class="wrapper">
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>💯 easy to use ...</summary>
+        <div class="wrapper">
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>🚀 and super duper fast!</summary>
+        <div class="wrapper">
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+      </details>
+    </wc-accordion>
+
   </main>
 </body>
 
