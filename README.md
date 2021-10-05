@@ -1,7 +1,7 @@
 # wc-accordion 🏖
 A vanilla, a11y ready web component for your basic accordion needs. Small, simple, nothing more.
 
-This is mostly inspired by [this post][link-post] from Louis Hoebregts (@Mamboleoo).
+This is mostly inspired by [this post][link-post] from Louis Hoebregts ([@Mamboleoo](https://twitter.com/mamboleoo)).
 
 ## Demo
 
@@ -58,7 +58,7 @@ Then just wrap your standard [\<details\>](https://developer.mozilla.org/en-US/d
 To use a custom name for the element, import default class and define the element your self like so:
 
 ```js
-import { Accordion } from 'wc-accordion.js'
+import { Accordion } from 'wc-accordion'
 
 customElement.define('my-accordion', Accordion);
 ```
