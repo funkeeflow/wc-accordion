@@ -10,6 +10,7 @@
     "dev": "wds --node-resolve --app-index docs/index.html --watch --open",
     "analyze": "wca analyze index.js --outFile custom-elements.json"
   },
+  "license": "MIT",
   "devDependencies": {
     "@web/dev-server": "^0.1.24",
     "web-component-analyzer": "^1.1.6"

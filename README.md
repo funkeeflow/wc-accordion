@@ -21,7 +21,7 @@ or import directly from **unpkg.com**
 
 <script type="module" src="https://unpkg.com/wc-accordion"></script>
 ```
-Then just wrap your standard [\<details\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements. Style the `<summary>` tag as you need. Take a wrapper class for your content and thats it!
+Then just wrap your standard [\<details\>][detials] elements. Style the `<summary>` tag as you need. Take a wrapper class for your content and thats it!
 
 ```html
   <wc-accordion class="accordion">
@@ -55,7 +55,7 @@ Then just wrap your standard [\<details\>](https://developer.mozilla.org/en-US/d
 
 ## How to use a custom component name
 
-To use a custom name for the element, import default class and define the element your self like so:
+To use a custom name for the element, import the default class and define the element yourself like so:
 
 ```js
 import { Accordion } from 'wc-accordion'
@@ -86,7 +86,7 @@ customElement.define('my-accordion', Accordion);
 
 ## CSS Custom Properties
 
-Use this custom properties on the your details elements to set animation timings and easing.
+Use the following custom properties on the your `<detials>` elements to set animation timings and easing.
 
 | Property              | Value                  |
 |-----------------------|------------------------------|
@@ -94,6 +94,10 @@ Use this custom properties on the your details elements to set animation timings
 | **--animation-duration-start**  | Duration of the open animation    |
 | **--animation-duration-end**  | Duration of the closing animation    |
 | **--animation-easing**    | Animation ease (e.g. `ease-in`)      |
+
+ **@media (prefers-reduced-motion)**
+
+The component queries the CSS Media feature [prefers-reduced-motion][prefers-reduce-motion] and if set it will skip open and close animation all together.
 
 ## Development
 Install dev dependencies
@@ -108,13 +112,16 @@ yarn link wc-accordion
 ```
 Run dev server
 ```bash
-yarn run dev
+yarn dev
 ```
 
 [link-demo]: https://funkeeflow.github.io/wc-accordion/
 [link-license]: https://github.com/funkeeflow/wc-accordion/blob/master/LICENSE
 [link-post]: https://css-tricks.com/how-to-animate-the-details-element-using-waapi/
 
+[prefers-reduce-motion]: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+
+[detials]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
 ## Lincense
 
 [MIT][link-license]
