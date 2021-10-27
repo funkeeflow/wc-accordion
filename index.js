@@ -108,8 +108,14 @@ class AnimatedDetail {
     this.el.style.height = this.el.style.overflow = '';
   }
 }
+const html = String.raw;
 export class Accordion extends HTMLElement {
-  template = `<slot></slot>`;
+  template = html`
+    <style>
+      :host{display: block;}
+    </style>
+    <slot></slot>
+  `;
 
   static get observedAttributes() {
     return ['mode'];
