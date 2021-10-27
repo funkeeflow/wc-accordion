@@ -17,12 +17,11 @@ class AnimatedDetail {
     this.duration = animationDuration;
     this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    try{
+    try {
       this.summary.addEventListener('click', (e) => this.onClick(e));
-    }catch(error){
-      console.log(error)
+    } catch (error) {
+      console.warn(error)
     }
-
   }
 
   onClick(e) {
@@ -176,13 +175,13 @@ export class Accordion extends HTMLElement {
     const modeExclusive = this.getAttribute('mode') === 'exclusive';
     if (modeExclusive) {
       this.defaultSlot.assignedElements().forEach((el) => {
-        try{
+        try {
           el.querySelector('summary').addEventListener(
             'click',
             this.handleExclusiveOpen
           );
-        }catch(error){
-          console.log(error);
+        } catch (error) {
+          console.warn(error);
         }
       });
     } else {
@@ -193,7 +192,7 @@ export class Accordion extends HTMLElement {
             this.handleExclusiveOpen
           );
         } catch (error) {
-          console.log(error)
+          console.warn(error)
         }
       });
     }
@@ -201,7 +200,7 @@ export class Accordion extends HTMLElement {
 
   connectedCallback() {
     this.defaultSlot.assignedElements().forEach((el) => {
-      if(el.tagName === 'DETAILS'){
+      if (el.tagName === 'DETAILS') {
         this.elements.push(new AnimatedDetail(el));
       }
     });
